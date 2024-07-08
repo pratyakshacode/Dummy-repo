@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(231, 231, 231);
+        }
+
+        .container {
+            padding: 3rem;
+        }
+
+        #header-div {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            border-left: 4px solid rgb(0, 115, 255);
+        }
+
+        #toggle-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border-radius: 7px;
+            border: 0px;
+            background-color: rgb(0, 115, 255);
+            color: white;
+            cursor: pointer;
+        }
+
+        .division {
+            margin-top: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 7px;
+            transition: 0.3s all linear;
+        }
+
+        ul li {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="header-div">
+            <h1>Day 1 : Introduction to HTML</h1>
+        </div>
+        
+        <button id="toggle-button">
+            Toggle Content
+        </button>
+
+        <div id="toggle-div" class="division">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sint sapiente dolorem alias, dignissimos tempora eum quos quaerat nesciunt vero culpa nisi, sunt provident consequuntur rem? Consequuntur voluptatum libero quasi soluta, quam tempore incidunt, at dignissimos recusandae nostrum reprehenderit pariatur nemo, assumenda sapiente perferendis numquam.
+        </div>
+
+        <div class="container">
+            <ul>
+                <li>Basic HTML Tags (eg: &lt html &gt,  &lt body &gt,  &lt footer &gt)</li>
+                <li>Text Formatting Tags (eg: &lt h1 &gt,  &lt p &gt,  &lt a &gt)</li>
+                <li>List and tables</li>
+            </ul>
+        </div>
+
+        <div id="description-box" class="division">
+            <p>This is the description</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem eos repudiandae dignissimos et saepe? Porro ratione fuga unde ab optio eligendi, sit dolor aut placeat minima voluptate mollitia quisquam molestiae perferendis doloribus culpa recusandae nihil incidunt repudiandae corporis deleniti eaque deserunt architecto aspernatur. Excepturi odio commodi sapiente quis consequuntur ab explicabo dicta ea delectus!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque rem accusantium velit! Odio ipsa deserunt a sequi cum accusamus corrupti adipisci labore eaque aspernatur aperiam provident soluta, quod tempora nostrum minima, molestias qui excepturi esse voluptatem alias sint obcaecati impedit! Voluptas, quas fugit. Ipsa quidem ratione maiores cupiditate veritatis, voluptatibus id similique commodi suscipit, incidunt mollitia, non iste reprehenderit? Ut, impedit facilis! Recusandae, eligendi iusto! Voluptate, soluta necessitatibus, exercitationem odio optio amet illo tenetur iusto distinctio officia cum reiciendis. Nesciunt eos consequatur ullam. Tenetur, ea.</p>
+        </div>
+    </div>
+
+    <script>
+
+        let toggleDiv = document.getElementById('toggle-div');
+        let descriptionDiv = document.getElementById('description-box');
+        let initialHeight = descriptionDiv.style.height;
+        let divContent = descriptionDiv.innerHTML;
+        let initialDisplay = toggleDiv.style.display
+
+        document.getElementById('toggle-button').addEventListener('click', () => {
+
+            toggleDiv.style.display = toggleDiv.style.display === initialDisplay ? 'none' : initialDisplay
+
+            if(descriptionDiv.style.height === initialHeight) {
+                descriptionDiv.innerHTML = ''
+                descriptionDiv.style.height = 0
+            }
+            else {
+                descriptionDiv.style.height = initialHeight
+                descriptionDiv.innerHTML = divContent
+            }
+
+        })
+    </script>
+</body>
+</html>
