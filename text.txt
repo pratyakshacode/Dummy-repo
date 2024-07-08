@@ -1,0 +1,9 @@
+Push new changes / files to git 
+
+initialize the repository in our machine - git init
+add all files / changes to git repo - git add .
+commit all changes -> parmanent changes - git commit -m "message"
+git branch -M main -> we are changing the default name (master) -> main
+add origin -> git remote add origin url
+git push -> if(upstream is not set) git push --set-upstream origin main
+
